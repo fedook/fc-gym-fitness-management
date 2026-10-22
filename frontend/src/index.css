@@ -1,0 +1,49 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #15803d;
+  --color-primary-dark: #14532d;
+  --color-secondary: #16a34a;
+  --color-accent: #22c55e;
+  --color-light-green: #dcfce7;
+  --color-pale-green: #f0fdf4;
+  --color-main-bg: #f8fafc;
+  --color-main-text: #0f172a;
+  --color-secondary-text: #64748b;
+  --color-border-color: #e2e8f0;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--color-main-bg);
+  color: var(--color-main-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+@layer components {
+  .card {
+    @apply bg-white border border-border-color rounded-2xl shadow-sm;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 bg-primary hover:bg-secondary text-white font-medium rounded-xl px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 disabled:opacity-60 disabled:cursor-not-allowed;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 bg-white border border-border-color hover:bg-pale-green text-main-text font-medium rounded-xl px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-primary/30 disabled:opacity-60;
+  }
+  .btn-danger {
+    @apply inline-flex items-center justify-center gap-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-xl px-4 py-2.5 text-sm transition-colors focus:outline-none focus:ring-2 focus:ring-red-500 disabled:opacity-60;
+  }
+  .input {
+    @apply w-full rounded-xl border border-border-color bg-white px-3.5 py-2.5 text-sm text-main-text placeholder:text-secondary-text focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-shadow disabled:bg-gray-50;
+  }
+  .label {
+    @apply block text-sm font-medium text-main-text mb-1.5;
+  }
+  .table-th {
+    @apply px-4 py-3 text-left text-xs font-semibold uppercase tracking-wider text-secondary-text;
+  }
+  .table-td {
+    @apply px-4 py-3.5 text-sm text-main-text;
+  }
+}
